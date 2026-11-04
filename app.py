@@ -91,13 +91,15 @@ def load_system():
     # rb_t = torch.from_numpy(np.load('cache_embedding/bge_corpus_3583fe1c97.npy')).to(device, torch.float32)
     # re_t = torch.from_numpy(np.load('cache_embedding/e5_corpus_8ded02df08.npy')).to(device, torch.float32)
     
-    bge_pt1 = np.load('cache_embeddings/bge_corpus_3583fe1c97_pt1.npy')
-    bge_pt2 = np.load('cache_embeddings/bge_corpus_3583fe1c97_pt2.npy')
-    rb_t = torch.from_numpy(np.concatenate([bge_pt1, bge_pt2])).to(device, torch.float32)
+    b1 = np.load('cache_embedding/bge_corpus_3583fe1c97_pt1.npy')
+    b2 = np.load('cache_embedding/bge_corpus_3583fe1c97_pt2.npy')
+    b3 = np.load('cache_embedding/bge_corpus_3583fe1c97_pt3.npy')
+    rb_t = torch.from_numpy(np.concatenate([b1, b2, b3])).to(device, torch.float32)
 
-    e5_pt1 = np.load('cache_embeddings/e5_corpus_8ded02df08_pt1.npy')
-    e5_pt2 = np.load('cache_embeddings/e5_corpus_8ded02df08_pt2.npy')
-    re_t = torch.from_numpy(np.concatenate([e5_pt1, e5_pt2])).to(device, torch.float32)
+    e1 = np.load('cache_embedding/e5_corpus_8ded02df08_pt1.npy')
+    e2 = np.load('cache_embedding/e5_corpus_8ded02df08_pt2.npy')
+    e3 = np.load('cache_embedding/e5_corpus_8ded02df08_pt3.npy')
+    re_t = torch.from_numpy(np.concatenate([e1, e2, e3])).to(device, torch.float32)
 
     bge = SentenceTransformer('BAAI/bge-m3', device=device)
     e5 = SentenceTransformer('intfloat/multilingual-e5-large', device=device)
