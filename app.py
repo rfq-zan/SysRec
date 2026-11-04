@@ -104,7 +104,7 @@ def load_system():
     bge = SentenceTransformer('BAAI/bge-m3', device=device)
     e5 = SentenceTransformer('intfloat/multilingual-e5-large', device=device)
     
-    with open('output_fusion/gate_features.pkl', 'rb') as f:
+    with open('output_fusions/gate_features.pkl', 'rb') as f:
         fb_final = pickle.load(f)
         
     gates_final = []
