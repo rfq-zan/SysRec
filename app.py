@@ -110,7 +110,7 @@ def load_system():
     gates_final = []
     for i in range(3):
         gate = Gate(d_in=38) 
-        gate.load_state_dict(torch.load(f'output_fusion/gate_model_{i}.pt', map_location=device, weights_only=True))
+        gate.load_state_dict(torch.load(f'output_fusions/gate_model_{i}.pt', map_location=device, weights_only=True))
         gate.eval()
         gates_final.append(gate)
         
