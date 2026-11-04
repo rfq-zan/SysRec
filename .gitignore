@@ -1,0 +1,10 @@
+.venv/
+*.pdf
+*.html
+East Java Smart Tourism_files/
+output_bge/
+output_e5/
+output_fusion/
+cache_embeddings/
+cache_embedding/bge_corpus_3583fe1c97.npy
+cache_embedding/e5_corpus_8ded02df08.npy
